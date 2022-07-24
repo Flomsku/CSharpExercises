@@ -1,0 +1,19 @@
+   int x;
+        int.TryParse(Console.ReadLine(), out x);
+        Console.WriteLine("Anna kaksi lukua: ");
+        int y;
+        int.TryParse(Console.ReadLine(), out y);
+
+        int a;
+        int b;
+        int c;
+        int d;
+        a = x + y;
+        b = x - y;
+        c = x * y;
+        d = x / y;
+
+        Console.WriteLine(a);
+        Console.WriteLine(b);
+        Console.WriteLine(c);
+        Console.WriteLine(d);
