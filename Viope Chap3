@@ -1,0 +1,29 @@
+using System;
+class Program
+{
+
+    static void Main(string[] args)
+    {
+        decimal[] tuoteyht = new decimal[3];
+        tuoteyht[0] = 7.96m;
+        tuoteyht[1] = 72.0m;
+        tuoteyht[2] = 99.90m;
+
+        int[] tuotelkm = new int[3];
+        tuotelkm[0] = 1;
+        tuotelkm[1] = 2;
+        tuotelkm[2] = 3;
+        decimal[] tuotehinta = new decimal[3];
+        tuotehinta[0] = (tuoteyht[0] / tuotelkm[0]);
+        tuotehinta[1] = (tuoteyht[1] / tuotelkm[1]);
+        tuotehinta[2] = (tuoteyht[2] / tuotelkm[2]);
+
+
+
+        Console.WriteLine("Tuote " + tuotelkm[0] + ": " + tuoteyht[0]);
+           Console.WriteLine("Tuote " + tuotelkm[1] + ": " + tuoteyht[1]);
+              Console.WriteLine("Tuote " + tuotelkm[2] + ": " + tuoteyht[2]);
+
+
+    }
+}
