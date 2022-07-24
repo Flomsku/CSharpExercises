@@ -1,0 +1,114 @@
+using System;
+class KulkuValine
+{
+    //Attribuutit/Jäsenmuuttujat
+    protected string tyyppi;
+    protected string merkki;
+    protected int vuosimalli;
+    protected float hinta;
+
+
+    //Muodostin
+    //oletusmuodostin
+    public KulkuValine() { }
+    //muodostin parametreillä 
+    public KulkuValine(string tyyppi, string merkki, int vuosimalli, float hinta)
+    {
+        this.tyyppi = tyyppi;
+        this.merkki = merkki;
+        this.vuosimalli = vuosimalli;
+        this.hinta = hinta;
+    }
+    //metodi
+    public virtual void TulostaTiedot()
+    {
+        Console.WriteLine(tyyppi + ", " + merkki + ", " + vuosimalli + ", " + hinta);
+
+
+    }
+}
+
+class Auto : KulkuValine
+{
+    //attribuutit/jäsenmuuttujat
+    protected int koneenkoko;
+    protected string malli;
+    protected int ovienlkm;
+
+
+    //muodostin parametreilla
+    public Auto(string tyyppi, string merkki, int vuosimalli, float hinta, int koneenkoko, string malli, int ovienlkm)
+    {
+        this.tyyppi = tyyppi;
+        this.merkki = merkki;
+        this.vuosimalli = vuosimalli;
+        this.hinta = hinta;
+        this.koneenkoko = koneenkoko;
+        this.malli = malli;
+        this.ovienlkm = ovienlkm;
+    }
+    //Metodi
+    public override void TulostaTiedot()
+    {
+
+        Console.WriteLine(tyyppi + ", " + merkki + ", " + vuosimalli + ", " + hinta + ", " + koneenkoko + ", " + malli + ", " + ovienlkm);
+
+
+    }
+    public override string ToString()
+    {
+        return tyyppi + ", " + merkki + ", " + vuosimalli + ", " + hinta + ", " + koneenkoko + ", " + malli + ", " + ovienlkm;
+    }
+
+    public override bool Equals(object o)
+    {
+        return base.Equals(o);
+    }
+
+}
+class Moottori : KulkuValine
+    {
+    //attribuutit/jäsenmuuttujat
+    protected string moottorinnimi;
+    protected int moottorinhinta;
+
+
+    //muodostin parametreilla
+    public Moottori(string moottorinnimi, int moottorinhinta)
+    {
+        this.moottorinnimi = moottorinnimi;
+        this.moottorinhinta = moottorinhinta;
+       
+    }
+    //Metodi
+    public override void TulostaTiedot()
+    {
+
+        Console.WriteLine(moottorinnimi + ", " + moottorinhinta);
+
+
+    }
+    public override string ToString()
+    {
+        return moottorinnimi + ", " + moottorinhinta;
+    }
+
+    public override bool Equals(object o)
+    {
+        return base.Equals(o);
+    }
+}
+class Ohjelma
+{
+    static void Main(string[] args)
+    {
+        KulkuValine kv = new KulkuValine("auto", "Honda", 2014, 18190f);
+        kv.TulostaTiedot();
+
+        Auto a = new Auto("maasto", "Honda", 2014, 18190f, 143, "Civic", 4);
+        a.TulostaTiedot();
+
+        Moottori m = new Moottori("Bensamoottori", 10000);
+        m.TulostaTiedot();
+    }
+}
