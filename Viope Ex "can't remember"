@@ -1,0 +1,31 @@
+using System;
+
+namespace bmi
+{
+    class Program
+    {
+
+        static void Main(string[] args)
+        {
+
+            double[] painot = new double[7] {60, 65, 70, 75, 80, 85, 90 };
+            double[] pituudet = new double[7] { 130, 140, 150, 160, 170, 180, 190 };
+            Console.WriteLine("    " + pituudet[0]+" "+pituudet[1]+" "+pituudet[2]+" "+pituudet[3]+" "+pituudet[4]+" "+pituudet[5]+" "+pituudet[6]);
+
+                for (int n = 0; n < 7; n++)
+                {
+                   double bmi1 = painot[n] / ((pituudet[0] / 100)*(pituudet[0]/100));
+                    double bmi2 = painot[n] / ((pituudet[1] / 100) * (pituudet[1] / 100));
+                    double bmi3 = painot[n] / ((pituudet[2] / 100) * (pituudet[2] / 100));
+                    double bmi4 = painot[n] / ((pituudet[3] / 100) * (pituudet[3] / 100));
+                    double bmi5 = painot[n] / ((pituudet[4] / 100) * (pituudet[4] / 100));
+                    double bmi6 = painot[n] / ((pituudet[5] / 100) * (pituudet[5] / 100));
+                double bmi7 = painot[n] / ((pituudet[6] / 100) * (pituudet[6] / 100));
+                    Console.WriteLine(painot[n] + "   " + Convert.ToInt32(bmi1) + "  " + Convert.ToInt32(bmi2) + "  " + Convert.ToInt32(bmi3) + "  " + Convert.ToInt32(bmi4) + "  " + Convert.ToInt32(bmi5) + "  " + Convert.ToInt32(bmi6) + "  " + Convert.ToInt32(bmi7));
+                }
+
+
+
+        }
+    }
+}
