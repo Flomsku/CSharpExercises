@@ -1,0 +1,68 @@
+using System;
+class KulkuValine
+    {
+        //Attribuutit/Jäsenmuuttujat
+        protected string tyyppi;
+        protected string merkki;
+        protected int vuosimalli;
+        protected float hinta;
+
+
+        //Muodostin
+        //oletusmuodostin
+       public KulkuValine() { }
+        //muodostin parametreillä 
+        public KulkuValine(string tyyppi, string merkki, int vuosimalli, float hinta)
+        {
+            this.tyyppi = tyyppi;
+            this.merkki = merkki;
+            this.vuosimalli = vuosimalli;
+            this.hinta = hinta;      
+        }
+        //metodi
+       public virtual void TulostaTiedot()
+        {
+            Console.WriteLine(tyyppi + ", " + merkki + ", " + vuosimalli + ", " + hinta);
+        
+
+        }
+    }
+
+    class Auto:KulkuValine
+    {
+        //attribuutit/jäsenmuuttujat
+        protected int koneenkoko;
+        protected string malli;
+        protected int ovienlkm;
+
+
+        //muodostin parametreilla
+        public Auto(string tyyppi, string merkki, int vuosimalli, float hinta, int koneenkoko, string malli, int ovienlkm)
+        {
+            this.tyyppi = tyyppi;
+            this.merkki = merkki;
+            this.vuosimalli = vuosimalli;
+            this.hinta = hinta;
+            this.koneenkoko = koneenkoko;
+            this.malli = malli;
+            this.ovienlkm = ovienlkm;
+        }
+        //Metodi
+        public override void TulostaTiedot()
+        {
+
+            Console.WriteLine(tyyppi + ", " + merkki + ", " + vuosimalli + ", " + hinta + ", " + koneenkoko + ", " + malli + ", " + ovienlkm);
+
+
+        }
+		public override string ToString()
+		{
+			return tyyppi + ", " + merkki + ", " + vuosimalli + ", " + hinta + ", " + koneenkoko + ", " + malli + ", " + ovienlkm;
+		}
+		
+		public override bool Equals(object o)
+		{
+			return base.Equals(o);
+		}
+
+	}    
