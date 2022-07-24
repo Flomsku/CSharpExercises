@@ -1,0 +1,34 @@
+using System;
+
+  
+        class Kirja  //Luokka
+        {
+            public string KirjanNimi;
+            public string KirjoittajanNimi;
+            public int id;
+            public float KappaleHinta;
+
+            //Muodostin
+            public Kirja(string KirjanNimi, string KirjoittajanNimi, int id, float KappaleHinta)
+
+            {
+                this.KirjanNimi = KirjanNimi;
+                this.KirjoittajanNimi = KirjoittajanNimi;
+                this.id = id;
+                this.KappaleHinta = KappaleHinta;
+            }
+            //Metodi
+
+            public void VertaileKirja(Kirja abc)
+            {
+                if (this.KappaleHinta > abc.KappaleHinta)
+                {
+                    Console.WriteLine(this.KirjanNimi + " on kalliimpi kuin " + abc.KirjanNimi);
+                }
+
+                else if (this.KappaleHinta < abc.KappaleHinta)
+                {
+                    Console.WriteLine(this.KirjanNimi + " on halvempi kuin " + abc.KirjanNimi);
+                }
+            }	 
+		}
