@@ -1,0 +1,47 @@
+using System;
+
+class Kirja
+{
+ 	public string Nimi;
+	private string KirjoittajanNimi;
+	private string Kustantaja;
+	private float hinta;
+	private string TeemanNimi;
+	
+	public float Hinta
+	{
+		get 
+		{
+			return hinta;
+		}
+		set
+		{
+			hinta = value > 30 ? (value * 0.9f) : value;
+		}
+	}
+	public Kirja(string Nimi, string KirjoittajanNimi, string Kustantaja, float Kaphinta, string TeemanNimi)
+	{
+			this.Hinta = Kaphinta;
+			this.Nimi = Nimi;
+			this.KirjoittajanNimi = KirjoittajanNimi;
+			this.Kustantaja = Kustantaja;
+			this.hinta = hinta;
+			this.TeemanNimi = TeemanNimi;
+			
+	}
+
+	
+	public void HaeKirja(string Nimi)
+	{
+		if (Nimi.Equals(this.Nimi))
+		
+			Console.WriteLine(Nimi + ", " + KirjoittajanNimi + ", " + Kustantaja + ", " + TeemanNimi + ", " +  hinta);
+		else
+			Console.WriteLine("Kirjaa ei löydy nimellä " + Nimi);
+
+	}
+		
+	public static void VaihdaTeema(Kirja k, string teema)
+	{
+			k.TeemanNimi = teema;
+	}
